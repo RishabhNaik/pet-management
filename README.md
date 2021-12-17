@@ -1,1 +1,1 @@
-# pet-management
+# petshop management system
