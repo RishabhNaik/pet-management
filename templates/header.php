@@ -1,9 +1,9 @@
 <head>
-	<title>Ninja Pizza</title>
+	<title>GetPets</title>
 	<!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <style type="text/css">
-	  .brand{
+	.brand{
 	  	background: #cbb09c !important;
 	  }
   	.brand-text{
@@ -19,9 +19,13 @@
 <body class="grey lighten-4">
 	<nav class="white z-depth-0">
     <div class="container">
-      <a href="#" class="brand-logo brand-text">Ninja Pizza</a>
+      <a href="#" class="brand-logo brand-text">GetPets</a>
       <ul id="nav-mobile" class="right hide-on-small-and-down">
-        <li><a href="#" class="btn brand z-depth-0">Add a Pizza</a></li>
+        <li><a href="#" class="btn brand z-depth-0">Home</a></li>
+		<li><a href="#" class="btn brand z-depth-0">Admin</a></li>
+		<li><a href="#" class="btn brand z-depth-0">Profile</a></li>
+		<li><a href="#" class="btn brand z-depth-0">Cart</a></li>
+		<li><a href="#" class="btn brand z-depth-0">About Us</a></li>
       </ul>
     </div>
   </nav>
