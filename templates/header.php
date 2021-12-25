@@ -23,7 +23,7 @@
       <ul id="nav-mobile" class="right hide-on-small-and-down">
         <li><a href="#" class="btn brand z-depth-0">Home</a></li>
 		<li><a href="#" class="btn brand z-depth-0">Admin</a></li>
-		<li><a href="#" class="btn brand z-depth-0">Profile</a></li>
+		<li><a href="login.php" class="btn brand z-depth-0">Profile</a></li>
 		<li><a href="#" class="btn brand z-depth-0">Cart</a></li>
 		<li><a href="#" class="btn brand z-depth-0">About Us</a></li>
       </ul>
