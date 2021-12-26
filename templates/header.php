@@ -1,27 +1,32 @@
 <head>
 	<title>GetPets</title>
-	<!-- Compiled and minified CSS -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
   <?php include('csstags.php'); ?>
+  
 </head>
 <body>
 <nav id="navbar-example2" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="index.php">GetPets</a>
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="#fat">@fat</a>
+      <a class="nav-link" href="index.php">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#mdo">@mdo</a>
+      <a class="nav-link" href="#mdo">Admin</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="login.php">Sign In</a>
         <a class="dropdown-item" href="register.php">Sign Up</a>
         <div role="separator" class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#three">Seller</a>
+        <a class="dropdown-item" href="seller.php">Seller</a>
       </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#mdo">Cart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="aboutUs.php">About US</a>
     </li>
   </ul>
 </nav>
