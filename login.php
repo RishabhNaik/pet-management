@@ -1,87 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-  
-  
-    <style>
-      .container {
-  padding: 2rem 0rem;
+<!-- <?php
+//This script will handle login
+session_start();
+
+// check if the user is already logged in
+if(isset($_SESSION['username']))
+{
+    header("location: welcome.php");
+    exit;
 }
+require_once "config.php";
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 400px;
+$username = $password = "";
+$err = "";
 
-    .modal-content {
-      padding: 1rem;
+// if request method is post
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(empty(trim($_POST['username'])) || empty(trim($_POST['password'])))
+    {
+        $err = "Please enter username + password";
     }
-  }
+    else{
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+    }
+
+
+if(empty($err))
+{
+    $sql = "SELECT id, username, password FROM users WHERE username = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $param_username);
+    $param_username = $username;
+    
+    
+    // Try to execute this statement
+    if(mysqli_stmt_execute($stmt)){
+        mysqli_stmt_store_result($stmt);
+        if(mysqli_stmt_num_rows($stmt) == 1)
+                {
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    if(mysqli_stmt_fetch($stmt))
+                    {
+                        if(password_verify($password, $hashed_password))
+                        {
+                            // this means the password is correct. Allow user to login
+                            session_start();
+                            $_SESSION["username"] = $username;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["loggedin"] = true;
+
+                            //Redirect user to welcome page
+                            header("location: welcome.php");
+                            
+                        }
+                    }
+
+                }
+
+    }
+}    
+
+
 }
-
-.modal-header {
-  .close {
-    margin-top: -1.5rem;
-  }
-}
-
-.form-title {
-  margin: -2rem 0rem 2rem;
-}
-
-.btn-round {
-  border-radius: 3rem;
-}
-
-.delimiter {
-  padding: 1rem;
-}
-
-.social-buttons {
-  .btn {
-    margin: 0 0.5rem 1rem;
-  }
-}
-
-.signup-section {
-  padding: 0.3rem 0rem;
-}
-
-  </style>
-</head>
-<body>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-  
-</html>
+?> -->
