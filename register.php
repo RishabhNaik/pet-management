@@ -1,3 +1,4 @@
+
 <?php
 
 require_once "config.php";
@@ -97,52 +98,45 @@ mysqli_close($conn);
 <html lang="en">
   <head>
   <?php include('templates/header.php'); ?>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- Bootstrap CSS -->
-    
+   <style>
+     body {
+  background-image: url("https://t3.ftcdn.net/jpg/02/00/12/40/360_F_200124079_6ayr4VU5AhLMfwPaDOxIk6Dgv0JWaCwX.jpg");
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+}
+.space{
+  padding:10px;
+}
+.container{
+  padding: 28px 50px !important;
+  background-color:white;
+  opacity: 0.9;
+  max-width: 600px !important;
+ 
+}
+form{
+  width:500px;
+}
+   </style>
 
-    <title>PHP login system!</title>
+    <title>Register</title>
   </head>
   <body>
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Php Login System</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-  <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="register.php">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout.php">Logout</a>
-      </li> -->
+  <div class="space"></div>
 
-      
-     
-    </ul>
-  </div>
-</nav>
-
-<div class="container mt-4">
-<h3>Please Register Here:</h3>
+  <div class="container">
+<h3> Create account :</h3>
 <hr>
 <form action="" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Username</label>
-      <input type="text" class="form-control" name="username" id="inputEmail4" placeholder="username">
+      <label for="inputusername4">Username</label>
+      <input type="text" class="form-control" name="username" id="inputusername4" placeholder="username">
     </div>
-    <hr>
+    <div class="form-group">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" name ="Email-id" id="inputEmail4" placeholder="Email-id">
+    </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
       <input type="password" class="form-control" name ="password" id="inputPassword4" placeholder="Password">
@@ -151,70 +145,12 @@ mysqli_close($conn);
   <div class="form-group">
       <label for="inputPassword4">Confirm Password</label>
       <input type="password" class="form-control" name ="confirm_password" id="inputPassword" placeholder="Confirm Password">
-    </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address </label>
-    <input type="text" class="form-control" name="address" id="inputAddress2" placeholder="Apartment, studio, or floor">
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option value="Andhra Pradesh">Andhra Pradesh</option>
-<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-<option value="Assam">Assam</option>
-<option value="Bihar">Bihar</option>
-<option value="Chandigarh">Chandigarh</option>
-<option value="Chhattisgarh">Chhattisgarh</option>
-<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-<option value="Daman and Diu">Daman and Diu</option>
-<option value="Delhi">Delhi</option>
-<option value="Lakshadweep">Lakshadweep</option>
-<option value="Puducherry">Puducherry</option>
-<option value="Goa">Goa</option>
-<option value="Gujarat">Gujarat</option>
-<option value="Haryana">Haryana</option>
-<option value="Himachal Pradesh">Himachal Pradesh</option>
-<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-<option value="Jharkhand">Jharkhand</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Kerala">Kerala</option>
-<option value="Madhya Pradesh">Madhya Pradesh</option>
-<option value="Maharashtra">Maharashtra</option>
-<option value="Manipur">Manipur</option>
-<option value="Meghalaya">Meghalaya</option>
-<option value="Mizoram">Mizoram</option>
-<option value="Nagaland">Nagaland</option>
-<option value="Odisha">Odish+
-<option value="Sikkim">Sikkim</option>
-<option value="Tamil Nadu">Tamil Nadu</option>
-<option value="Telangana">Telangana</option>
-<option value="Tripura">Tripura</option>
-<option value="Uttar Pradesh">Uttar Pradesh</option>
-<option value="Uttarakhand">Uttarakhand</option>
-<option value="West Bengal">West Bengal</option>
-      </select>
-    </div>
-    <!-- <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div> -->
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+   <br>
+  <button type="submit" class="btn btn-primary">Continue</button>
+  <br><br>
+  <p>Already have an account? <a href="login.php">Sign-in</a></p>
+ 
 </form>
 </div>
 
