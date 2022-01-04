@@ -6,7 +6,7 @@
 <body>
 <nav id="navbar-example2" class="navbar navbar-light bg-light">
   <!-- <img id="logo" src="logo.png" alt="logo"> -->
-  <a class="navbar-brand" href="index.php"><img src="logo.png" alt="logo"><b> GetPets</b></a>
+  <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"><b> GetPets</b></a>
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" href="index.php">Home</a>
