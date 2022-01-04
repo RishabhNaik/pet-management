@@ -94,34 +94,29 @@ form{
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>PHP login system!</title>
+    <title>Admin</title>
   </head>
   <body>
 <div class="space"></div>
 <div class="container">
-<h3>Log-in:</h3>
+<h3>Admin Login:</h3>
 <hr>
 
 <form action="" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+    <label for="exampleInputadmin_id">Admin_id </label>
+    <input type="text" name="username" class="form-control" id="exampleInputadmin_id" aria-describedby="emailHelp" placeholder="Admin_id">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Keep me signed in</label>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+  
     <a href="#">Forgot password?</a>
-  </div>
-  <button type="submit" class="btn btn-primary">Log-in</button>
-  <br><br>
+    <br><br>
+
+  <button type="submit" class="btn btn-primary">Continue</button>
  
-  <a href="register.php">Create your account</a>
 </form>
 
 
