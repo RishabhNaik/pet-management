@@ -98,28 +98,7 @@ mysqli_close($conn);
 <html lang="en">
   <head>
   <?php include('templates/header.php'); ?>
-   <style>
-     body {
-  background-image: url("https://t3.ftcdn.net/jpg/02/00/12/40/360_F_200124079_6ayr4VU5AhLMfwPaDOxIk6Dgv0JWaCwX.jpg");
-  /* background-repeat: no-repeat;
-  background-size: cover; */
-}
-.space{
-  padding:10px;
-}
-.container{
-  padding: 28px 50px !important;
-  background-color:white;
-  opacity: 0.9;
-  max-width: 600px !important;
- 
-}
-form{
-  width:500px;
-}
-   </style>
-
-    <title>Register</title>
+  <?php include('templates/css_login.php'); ?>
   </head>
   <body>
   <div class="space"></div>

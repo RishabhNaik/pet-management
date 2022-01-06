@@ -9,18 +9,22 @@
   <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"><b> GetPets</b></a>
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="index.php">Home</a>
+      <a class="nav-link" href="welcome.php">Home</a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="admin.php">Admin</a>
-    </li>
+    </li> -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <?php echo "Hello ". $_SESSION['username']?>! Profile </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="login.php">Sign In</a>
-        <a class="dropdown-item" href="register.php">Sign Up</a>
+        <h6>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;Your Profile</h6>
+        <hr>
+        <a class="dropdown-item" href="#">Your Account</a>
+        <a class="dropdown-item" href="seller.php">Login & security</a>
+        <a class="dropdown-item" href="seller.php">Your Seller Account</a>
         <div role="separator" class="dropdown-divider"></div>
-        <a class="dropdown-item" href="seller.php">Seller</a>
+        <a class="dropdown-item" href="logout.php">Log Out</a>
       </div>
     </li>
     <li class="nav-item">

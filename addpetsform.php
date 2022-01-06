@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
  session_start();
  if(isset($_SESSION['user']))
  {
@@ -7,7 +7,7 @@
  else{
   echo"<script>location.href='login.html'</script>";
  }
-?>
+?> -->
 <!doctype html>
 <html>
   <head>
@@ -80,13 +80,13 @@ border: 3px solid green;background-color: #4CAF50;color:#f2f2f2;font-size:17px;"
   <br><br>
   <input type="number" step=any name="weight"  placeholder="Enter weight" style="width:280px;height:30px;
    border: 2px solid  #4CAF50; border-radius:3px;background:transparent;" min="1" required>
-  
+  <br><br>
  <input type="number" step=any name="height"  placeholder="Enter height" style="width:300px;height:30px;
    border: 2px solid  #4CAF50; border-radius:3px;background:transparent;" min="15" required>
   <br><br>
   <input type="number" name="age"  placeholder="Enter age" style="width:280px;height:30px;
    border: 2px solid  #4CAF50; border-radius:3px;background:transparent;" min="1" required>
- 
+ <br><br>
   <input type="text" name="fur"  placeholder="Enter fur" style="width:300px;height:30px;
    border: 2px solid  #4CAF50; border-radius:3px;background:transparent;" required>
   <br><br>
