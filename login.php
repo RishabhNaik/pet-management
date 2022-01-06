@@ -69,29 +69,7 @@ if(empty($err))
 <html lang="en">
   <head>
   <?php include('templates/header.php'); ?>
-    <style>
-body {
-  background-image: url("https://t3.ftcdn.net/jpg/02/00/12/40/360_F_200124079_6ayr4VU5AhLMfwPaDOxIk6Dgv0JWaCwX.jpg");
-  /* background-repeat: no-repeat;
-  background-size: cover; */
-}
-.space{
-  padding:20px;
-}
-.container{
-  padding: 40px 50px !important;
-  background-color:white;
-  opacity: 0.85;
-  max-width: 600px !important;
-}
-
-form{
-  width:500px;
-}
-</style>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <?php include('templates/css_login.php'); ?>
 
     <title>PHP login system!</title>
   </head>
@@ -103,11 +81,11 @@ form{
 
 <form action="" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
+    <label for="exampleInputEmail1"><b>Username :</b></label>
     <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword1"><b>Password :</b></label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
   </div>
   <div class="form-group form-check">
@@ -119,8 +97,8 @@ form{
   </div>
   <button type="submit" class="btn btn-primary">Log-in</button>
   <br><br>
- 
-  <a href="register.php">Create your account</a>
+  <p>Create your account ? <a href="register.php"> <u>Sign-UP</u></a></p>
+  
 </form>
 
 
