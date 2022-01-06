@@ -1,19 +1,16 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<!-- <style type="text/css">
-	.brand{
-	  	background: #cbb09c !important;
-	  }
-  	.brand-text{
-  		color: #cbb09c !important;
-  	}
-  	form{
-  		max-width: 460px;
-  		margin: 20px auto;
-  		padding: 20px;
-  	}
-  </style> -->
+
   <style>
+	  body{
+		background:#E6E7E8;
+	  }
+	  .card{
+		border-radius: 15px;
+	  }
+	  .card-body img{
+		border-radius: 7px;
+	  }
 	  .nav-item a{
          color:black !important ;
 	  }
@@ -41,12 +38,11 @@
 	.input-wrapper button{
         color:black;
 		background:#808080;
-		/* height:25px; */
 	}
-	.container .row .col img{
-		/* width:300px; */
+	/* .container .row .col img{
+		width:300px;
 		height:250px;
-	}
-
+	} */
+   
 	
   </style>
