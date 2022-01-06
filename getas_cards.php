@@ -19,7 +19,7 @@ $results = mysqli_query($conn, "SELECT * FROM pet");
                 <div class="card-body">
                     <h5 class="card-title"> <?php echo $row['petname']; ?></h5>
                     <h6 class="card-subtitle mb-2 text-muted"> <?php echo $row['category']; ?></h6>
-                    <img class="img_size" style=width:300px; src="<?php echo $row['photo']; ?>" alt="Card image top">
+                    <img class="img_size" style=width:300px; src="<?php echo $row['image']; ?>" alt="Card image top">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a>

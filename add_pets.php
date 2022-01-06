@@ -31,7 +31,7 @@ include("config.php");
     }
     echo $img;
   
-    $sql = "INSERT INTO pet (petname,category,lifespan,photo) VALUES ('$petname','$category','$lifespan','$img')";
+    $sql = "INSERT INTO pet (petname,category,lifespan,image) VALUES ('$petname','$category','$lifespan','$img')";
 
     $result = mysqli_query($conn,$sql);
     echo "inserted successfully..!";
