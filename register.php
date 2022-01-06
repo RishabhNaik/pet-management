@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 if(empty(trim($_POST['password']))){
     $password_err = "Password cannot be blank";
 }
-elseif(strlen(trim($_POST['password'])) < 5){
+elseif(strlen(trim($_POST['password'])) < 3){
     $password_err = "Password cannot be less than 5 characters";
 }
 else{
@@ -77,7 +77,7 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
 
         // Set these parameters
         $param_username = $username;
-        $param_password = $password;
+        $param_password = password_hash($password, PASSWORD_DEFAULT);
         $param_email = $email;
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))

@@ -1,69 +1,26 @@
-<?php
-//This script will handle login
-session_start();
+<?php 
+include("config.php");
 
-// check if the user is already logged in
-if(isset($_SESSION['username']))
+if(isset($_POST['admin_id']))
 {
-    header("location: welcome.php");
-    exit;
+$admin_id = $_POST['admin_id'];
+$password = $_POST['password'];
+
+$res = mysqli_query($conn,"select * from admins where admin_id='$admin_id' and password='$password'");
+$result=mysqli_fetch_array($res);
+
+if($result)
+{
+echo "You have logged in as an admin";
+header("location:adminpage.php");   // create my-account.php page for redirection 
+exit;	
+}
+else
+{
+	echo "failed ";
+}
 }
 require_once "config.php";
-
-$username = $password = "";
-$err = "";
-
-// if request method is post
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(empty(trim($_POST['username'])) || empty(trim($_POST['password'])))
-    {
-        $err = "Please enter username + password";
-    }
-    else{
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-    }
-
-
-if(empty($err))
-{
-    $sql = "SELECT id, username, password FROM users WHERE username = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $param_username);
-    $param_username = $username;
-    
-    
-    // Try to execute this statement
-    if(mysqli_stmt_execute($stmt)){
-        mysqli_stmt_store_result($stmt);
-        if(mysqli_stmt_num_rows($stmt) == 1)
-                {
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt))
-                    {
-                        if(password_verify($password, $hashed_password))
-                        {
-                            // this means the password is corrct. Allow user to login
-                            session_start();
-                            $_SESSION["username"] = $username;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["loggedin"] = true;
-
-                            //Redirect user to welcome page
-                            header("location: welcome.php");
-                            
-                        }
-                    }
-
-                }
-
-    }
-}    
-
-
-}
-
-
 ?>
 
 <!doctype html>
@@ -105,7 +62,7 @@ form{
 <form action="" method="post">
   <div class="form-group">
     <label for="exampleInputadmin_id">Admin_id </label>
-    <input type="text" name="username" class="form-control" id="exampleInputadmin_id" aria-describedby="emailHelp" placeholder="Admin_id">
+    <input type="text" name="admin_id" class="form-control" id="exampleInputadmin_id" aria-describedby="emailHelp" placeholder="Admin_id">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
