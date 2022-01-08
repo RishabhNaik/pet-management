@@ -1,6 +1,6 @@
 <?php
 include_once '../config.php';
-$result = mysqli_query($conn,"SELECT * FROM pet");
+$result = mysqli_query($conn,"SELECT * FROM pet order by id desc");
 ?>
 
 <table>
@@ -17,8 +17,8 @@ $result = mysqli_query($conn,"SELECT * FROM pet");
 	<tr class="<?php if(isset($classname)) echo $classname;?>">
 	<td><?php echo $row["id"]; ?></td>
 	<td><?php echo $row["petname"]; ?></td>
-	<td><?php echo $row["category"]; ?></td>
-	<td><?php echo $row["lifespan"]; ?></td>
+	<td><?php echo $row["specie"]; ?></td>
+	<td><?php echo $row["age"]; ?></td>
 	<td><a href="delete_pet.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
 	</tr>
 	<?php
