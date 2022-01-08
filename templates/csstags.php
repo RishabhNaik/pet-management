@@ -1,9 +1,12 @@
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
   <style>
+	  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 	  body{
 		background:#E6E7E8;
+		font-family: 'Poppins', sans-serif;
 	  }
 	  .card{
 		border-radius: 15px;
@@ -23,8 +26,12 @@
 		background-color: #e7e7e7 !important;
 		opacity: 0.9;
 	  }
+	  .heading{
+		  background-color:rgba(255,255,255,0.5);
+		  padding-bottom:10px;
+	  }
 	.navbar-brand img{
-		width:100px;
+		width:50px;
 		height:50px;
 		
 	}
@@ -35,26 +42,34 @@
 	.container-footer{
 		width:100%;
 	}
+	.input-wrapper input{
+        width:180px;
+		height:35px;
+		background:#E6E7E8;
+		border-radius: 10px;
+	}
 	.input-wrapper button{
         color:black;
+		height:35px;
 		background:#808080;
+		border-radius: 25px !important;
 	}
 	/* .container .row .col img{
 		width:300px;
 		height:250px;
 	} */
    .content_aboutus p{
-	   padding:30px 30px 20px 30px;
+	   padding:30px 50px 20px 70px;
    }
    .container_aboutus h2{
-	padding:30px 0px 0px 30px;
+	padding:30px 0px 0px 60px;
    }
    .form_body_addpets{
-	   padding:  50px ;
+	   padding:20px !important ;
        background-color:white;
        opacity: 0.9;
        max-width: 600px !important;
-	   margin:50px 350px;
+	   margin: auto !important;
 	   font-size: 18px;
    }
    .form_body_addpets h3{
