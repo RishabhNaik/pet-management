@@ -2,14 +2,18 @@
 
 include ("config.php");
 
-$results = mysqli_query($conn, "SELECT * FROM pet");
+$results = mysqli_query($conn,  "SELECT * FROM pet");
+
+session_start();    
+
 
 $hiddenname=$_POST['hidden_petname'];
 	$hiddenimage=$_POST['hidden_image'];
     $hiddenspecie=$_POST['hidden_specie'];
   $hiddencost=$_POST['hidden_cost'];
+    $cid=$_SESSION['id'];
 
-  $sql = "INSERT INTO cart (petname,photo,specie,price)  VALUES ('$hiddenname','$hiddenimage','$hiddenspecie','$hiddencost')";
+  $sql = "INSERT INTO cart (petname,photo,specie,price,c_id)  VALUES ('$hiddenname','$hiddenimage','$hiddenspecie','$hiddencost','$cid')";
 
   $result = mysqli_query($conn,$sql);
   echo "inserted successfully..!";
@@ -35,6 +39,7 @@ $hiddenname=$_POST['hidden_petname'];
                     <input type="hidden" name="hidden_image" value="<?php echo $row["image"]; ?>" />
                     <input type="hidden" name="hidden_specie" value="<?php echo $row["specie"]; ?>" />
                     <input type="hidden" name="hidden_cost" value="<?php echo $row["cost"]; ?>" />
+
                     <input  type="submit" class="btn btn-primary">Add to cart</input>
                 </div>
                 </form>

@@ -1,7 +1,9 @@
 <?php
 include_once 'config.php';
 $result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(id),id,petname,specie,price FROM cart group by petname order by row_num");
+
 ?>
+
 
 <table>
 	<tr>
@@ -16,7 +18,7 @@ $result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(id),id,p
 	while($row = mysqli_fetch_array($result)) {
 	?>
 	<tr class="<?php if(isset($classname)) echo $classname;?>">
-    <?php echo var_dump($row);?>
+
 	<td><?php echo $row["row_num"]; ?></td>
 	<td><?php echo $row["petname"]; ?></td>
 	<td><?php echo $row["specie"]; ?></td>
