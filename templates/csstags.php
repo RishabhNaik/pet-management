@@ -25,7 +25,7 @@
 	  }
 	.navbar-brand img{
 		width:100px;
-		height: 60px;
+		height:50px;
 		
 	}
 	.carousel-inner img{
@@ -43,6 +43,25 @@
 		width:300px;
 		height:250px;
 	} */
-   
-	
+   .content_aboutus p{
+	   padding:30px 30px 20px 30px;
+   }
+   .container_aboutus h2{
+	padding:30px 0px 0px 30px;
+   }
+   .form_body_addpets{
+	   padding:  50px ;
+       background-color:white;
+       opacity: 0.9;
+       max-width: 600px !important;
+	   margin:50px 350px;
+	   font-size: 18px;
+   }
+   .form_body_addpets h3{
+	   text-align: center !important;
+   }
+   .form_addpets{
+	   padding:15px 30px 0 30px;
+   }
+
   </style>
