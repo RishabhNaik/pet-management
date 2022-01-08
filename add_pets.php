@@ -1,29 +1,27 @@
- <?php
 
-include("config.php");
+<?php
 
-  if(isset($_POST['save']))
-{
-  $petname=$_POST['petname'];
-	$lifespan=$_POST['lifespan'];
-	$category=$_POST['category'];
-  $paragraph=$_POST['paragraph'];
+  include("config.php");
 
-  if($_FILES['f1']['name']){
-    move_uploaded_file($_FILES['f1']['tmp_name'], "images/".$_FILES['f1']['name']);
-    $img="images/".$_FILES['f1']['name'];
+  if(isset($_POST['save'])){
+    $petname=$_POST['petname'];
+	  $age=$_POST['age'];
+	  $specie=$_POST['specie'];
+    $paragraph=$_POST['paragraph'];
+
+    if($_FILES['f1']['name']){
+      move_uploaded_file($_FILES['f1']['tmp_name'], "images/".$_FILES['f1']['name']);
+      $img="images/".$_FILES['f1']['name'];
     }
     // echo '<script> alert("$img")</script>';
-    
-  
-    $sql = "INSERT INTO pet (petname,category,lifespan,photo,paragraph) VALUES ('$petname','$category','$lifespan','$img','$paragraph')";
+    $sql = "INSERT INTO pet (petname,specie,age,image,paragraph) VALUES ('$petname','$specie','$age','$img','$paragraph')";
 
     $result = mysqli_query($conn,$sql);
     echo '<script> alert("inserted successfully..!")</script>';
 }
 ?>
 
-<?php include('templates/header.php'); ?>
+<?php include('templates/header2.php'); ?>
 <?php include('templates/csstags.php'); ?>
 <div class="form_body_addpets">
   <h3>Add Your Pets </h3>
@@ -34,13 +32,13 @@ include("config.php");
       <input type="text" name="petname" placeholder="Enter name"><br/>
     </div>
     <div class="form_addpets">
-      <label id="first"><b>Lifespan:</b></label><br/>
-      <input type="number" name="lifespan" placeholder="Enter lifespan" ><br/>
+      <label id="first"><b>age:</b></label><br/>
+      <input type="number" name="age" placeholder="Enter age" ><br/>
     </div>
     <div class="form_addpets">
-      <label id="first"><b>Category:</b></label><br/>
-      <select id="select-state" name="category" required>
-            <option value="">Select a category...</option>
+      <label id="first"><b>specie:</b></label><br/>
+      <select id="select-state" name="specie" required>
+            <option value="">Select a specie...</option>
             <option value="Cat">Cat</option>
             <option value="Dog">Dog</option>
             <option value="Fish">Fish</option>
@@ -48,7 +46,7 @@ include("config.php");
       <br/>
     </div>
     <div class="form_addpets">
-      <label id="first"><b>Add Photo:</b></label><br/>
+      <label id="first"><b>Add image:</b></label><br/>
       <input type="file" name="f1"><br>
     </div>
     <div class="form_addpets">

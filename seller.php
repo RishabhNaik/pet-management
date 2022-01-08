@@ -5,7 +5,7 @@ session_start();
 // check if the user is already logged in
 if(isset($_SESSION['sellername']))
 {
-    header("location: welcome.php");
+    header("location: add_pets.php ");
     exit;
 }
 require_once "config.php";
@@ -50,7 +50,7 @@ if(empty($err))
                             $_SESSION["loggedin"] = true;
 
                             //Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: add_pets.php");
                             
                         }
                     }
@@ -70,6 +70,7 @@ if(empty($err))
   <head>
   <?php include('templates/header.php'); ?>
   <?php include('templates/css_login.php'); ?>
+
   </head>
   <body>
 <div class="space"></div>
@@ -79,8 +80,8 @@ if(empty($err))
 
 <form action="" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1"><b>Sellername :</b></label>
-    <input type="text" name="sellername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Sellername">
+    <label for="exampleInputEmail1"><b>sellername :</b></label>
+    <input type="text" name="sellername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter sellername">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1"><b>Password :</b></label>
@@ -95,9 +96,14 @@ if(empty($err))
   </div>
   <button type="submit" class="btn btn-primary">Log-in</button>
   <br><br>
-  <p>Create your account ? <a href="#"> <u>Sign-UP</u></a></p>
+  <p>Create your account ? <a href="register.php"> <u>Sign-UP</u></a></p>
+  
 </form>
+
+
+
 </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

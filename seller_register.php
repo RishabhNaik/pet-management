@@ -3,8 +3,8 @@
 
 require_once "config.php";
 
-$sellername = $password = $confirm_password = $selleremail = "";
-$sellername_err = $password_err = $confirm_password_err = $selleremail_err = "";
+$sellername = $password = $confirm_password = $email = "";
+$sellername_err = $password_err = $confirm_password_err = $email_err = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -41,11 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     mysqli_stmt_close($stmt);
 
-    if(empty(trim($_POST["selleremail"]))){
-        $selleremail_err = "selleremail cannot be blank";
+    if(empty(trim($_POST["email"]))){
+        $email_err = "email cannot be blank";
     }
     else{
-      $selleremail = trim($_POST['selleremail']);
+      $email = trim($_POST['email']);
   }
   
 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 if(empty(trim($_POST['password']))){
     $password_err = "Password cannot be blank";
 }
-elseif(strlen(trim($_POST['password'])) < 3){
+elseif(strlen(trim($_POST['password'])) <3){
     $password_err = "Password cannot be less than 5 characters";
 }
 else{
@@ -69,16 +69,16 @@ if(trim($_POST['password']) !=  trim($_POST['confirm_password'])){
 // If there were no errors, go ahead and insert into the database
 if(empty($sellername_err) && empty($password_err) && empty($confirm_password_err))
 {
-    $sql = "INSERT INTO seller (sellername, password, selleremail) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO seller (sellername, password, email) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt)
     {
-        mysqli_stmt_bind_param($stmt, "sss", $param_sellername, $param_password, $param_selleremail);
+        mysqli_stmt_bind_param($stmt, "sss", $param_sellername, $param_password, $param_email);
 
         // Set these parameters
         $param_sellername = $sellername;
         $param_password = password_hash($password, PASSWORD_DEFAULT);
-        $param_selleremail = $selleremail;
+        $param_email = $email;
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))
         {
@@ -118,7 +118,7 @@ mysqli_close($conn);
     </div>
     <div class="form-group">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" name ="selleremail" id="inputEmail4" placeholder="Email-id">
+      <input type="email" class="form-control" name ="email" id="inputEmail4" placeholder="Email-id">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>

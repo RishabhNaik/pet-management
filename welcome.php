@@ -44,9 +44,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-<h1><td>hello</td></h1>
-
+<div class="heading">
+  <h1 style=padding-top:10px;><center>Pets</center></h1>
+</div>
   <?php include('getas_cards.php'); ?>
 	<?php include('templates/footer.php'); ?>
 	<?php include('templates/scriptags.php'); ?>

@@ -15,8 +15,8 @@ $hiddenname=$_POST['hidden_petname'];
 
   $sql = "INSERT INTO cart (petname,photo,specie,price,c_id)  VALUES ('$hiddenname','$hiddenimage','$hiddenspecie','$hiddencost','$cid')";
 
-  $result = mysqli_query($conn,$sql);
-  echo "inserted successfully..!";
+  // $result = mysqli_query($conn,$sql);
+  // echo "inserted successfully..!";
 
 ?>
 
@@ -39,8 +39,7 @@ $hiddenname=$_POST['hidden_petname'];
                     <input type="hidden" name="hidden_image" value="<?php echo $row["image"]; ?>" />
                     <input type="hidden" name="hidden_specie" value="<?php echo $row["specie"]; ?>" />
                     <input type="hidden" name="hidden_cost" value="<?php echo $row["cost"]; ?>" />
-
-                    <input  type="submit" class="btn btn-primary">Add to cart</input>
+                    <button type="submit" class="btn btn-primary">Add to cart</button>
                 </div>
                 </form>
             </div>

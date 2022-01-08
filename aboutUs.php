@@ -4,8 +4,8 @@
 	<?php include('templates/header.php'); ?>
 	<?php include('templates/csstags.php'); ?>
 	<br>
-    <h1 style=padding-left:15px;>GetPets</h1>
-	<div class="container_aboutus">
+    <h1 style=padding-left:25px;>GetPets</h1>
+	<div class="container_aboutus px-3">
     <h2>About Us</h2>
 	<div class="content_aboutus">
     <p style="text-align:justify;">
