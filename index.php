@@ -28,73 +28,7 @@
 
 <h1><td>hello</td></h1>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-       <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/doggo.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Dog</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-    </div>
-	<div class="col">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/doggo.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Dog</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/doggo.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Dog</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/petsimg1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Cat</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/petsimg1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Cat</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/petsimg1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Cat</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>
-
+  <?php include('getas_cards.php'); ?>
 	<?php include('templates/footer.php'); ?>
 	<?php include('templates/scriptags.php'); ?>
 

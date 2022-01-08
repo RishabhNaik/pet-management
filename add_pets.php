@@ -13,34 +13,54 @@ include("config.php");
     move_uploaded_file($_FILES['f1']['tmp_name'], "images/".$_FILES['f1']['name']);
     $img="images/".$_FILES['f1']['name'];
     }
-    echo $img;
+    // echo '<script> alert("$img")</script>';
+    
   
     $sql = "INSERT INTO pet (petname,category,lifespan,photo,paragraph) VALUES ('$petname','$category','$lifespan','$img','$paragraph')";
 
     $result = mysqli_query($conn,$sql);
-    echo "inserted successfully..!";
+    echo '<script> alert("inserted successfully..!")</script>';
 }
-
-
-
 ?>
 
-<form action="" method="post" enctype="multipart/form-data"> 
-<label id="first"><b>First name:</b></label><br/>
-<input type="text" name="petname"><br/>
+<?php include('templates/header.php'); ?>
+<?php include('templates/csstags.php'); ?>
+<div class="form_body_addpets">
+  <h3>Add Your Pets </h3>
+  <hr>
+  <form action="" method="post" enctype="multipart/form-data"> 
+    <div class="form_addpets">
+      <label id="first"><b>First name:</b></label><br/>
+      <input type="text" name="petname" placeholder="Enter name"><br/>
+    </div>
+    <div class="form_addpets">
+      <label id="first"><b>Lifespan:</b></label><br/>
+      <input type="number" name="lifespan" placeholder="Enter lifespan" ><br/>
+    </div>
+    <div class="form_addpets">
+      <label id="first"><b>Category:</b></label><br/>
+      <select id="select-state" name="category" required>
+            <option value="">Select a category...</option>
+            <option value="Cat">Cat</option>
+            <option value="Dog">Dog</option>
+            <option value="Fish">Fish</option>
+      </select>
+      <br/>
+    </div>
+    <div class="form_addpets">
+      <label id="first"><b>Add Photo:</b></label><br/>
+      <input type="file" name="f1"><br>
+    </div>
+    <div class="form_addpets">
+      <label id="first"><b>Description:</b></label><br/>
+      <textarea rows="5" cols="52" type="text" name="paragraph" minlength="10" placeholder="Description about 150 characters"> </textarea>
+      <br/>
+    </div>
+    <div class="form_addpets">
+      <button type="submit" name="save">submit</button>
+    </div>
+  </form>
+</div>
 
-<label id="first"><b>lifespan:</b></label><br/>
-<input type="number" name="lifespan"><br/>
-
-<label id="first"><b>category:</b></label><br/>
-<input type="text" name="category"><br/>
-
-<input type="file" name="f1"><br>
-
-<label id="first"><b>Description:</b></label><br/>
-<input type="text" name="paragraph" minlength="10"><br/>
-
-
-<button type="submit" name="save">save</button>
-
-</form>
+<?php include('templates/footer.php'); ?>
+<?php include('templates/scriptags.php'); ?>
