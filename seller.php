@@ -1,72 +1,3 @@
-<?php
-//This script will handle login
-require_once "config.php";
-session_start();
-
-// check if the user is already logged in
-if(isset($_SESSION['sellername']))
-{
-    header("location: sellerpage.php");
-    exit;
-}
-
-
-$sellername = $password = "";
-$err = "";
-
-// if request method is post
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(empty(trim($_POST['sellername'])) || empty(trim($_POST['password'])))
-    {
-        $err = "Please enter sellername + password";
-    }
-    else{
-        $sellername = trim($_POST['sellername']);
-        $password = trim($_POST['password']);
-    }
-
-
-if(empty($err))
-{
-    $sql = "SELECT id, username, password FROM users WHERE username = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $param_sellername);
-    $param_sellername = $sellername;
-    
-    
-    // Try to execute this statement
-    if(mysqli_stmt_execute($stmt)){
-        mysqli_stmt_store_result($stmt);
-        if(mysqli_stmt_num_rows($stmt) == 1)
-                {
-                    mysqli_stmt_bind_result($stmt, $id, $sellername, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt))
-                    {
-                        if(password_verify($password, $hashed_password))
-                        {
-                            // this means the password is corrct. Allow user to login
-                            session_start();
-
-                            $_SESSION["sellername"] = $sellername;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["loggedin"] = true;
-
-                            //Redirect user to welcome page
-                            header("location: sellerpage.php");
-                            
-                        }
-                    }
-
-                }
-
-    }
-}    
-
-
-}
-
-
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -81,7 +12,7 @@ if(empty($err))
 <h3>Log-in:</h3>
 <hr>
 
-<form action="" method="post">
+<form action="sample.php" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1"><b>sellername :</b></label>
     <input type="text" name="sellername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter sellername">
@@ -97,7 +28,7 @@ if(empty($err))
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
     <a href="#">Forgot password?</a>
   </div>
-  <button type="submit" class="btn btn-primary">Log-in</button>
+  <button type="submit" name="submit" class="btn btn-primary">Log-in</button>
   <br><br>
   <p>Create your account ? <a href="register.php"> <u>Sign-UP</u></a></p>
   

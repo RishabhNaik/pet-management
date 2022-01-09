@@ -12,7 +12,7 @@ $result=mysqli_fetch_array($res);
 if($result)
 {
 echo "You have logged in as an admin";
-header("location:adminpage.php");   // create my-account.php page for redirection 
+header("location:adminTable.php");   // create my-account.php page for redirection 
 exit;	
 }
 else

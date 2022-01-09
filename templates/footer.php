@@ -30,8 +30,6 @@
                 <button type="submit" id="subscribe" class="btn">Go</button>
                
 			</div>
-      <br>
-      <p><i class="fas fa-envelope mr-3"></i> getpets@gmail.com</p>
           </div>
           <!-- Grid column -->
 
@@ -46,10 +44,10 @@
             <p>
               <a class="text-white">Cats</a>
             </p>
-            <!-- <p>
-              <a class="text-white">BrandFlow</a>
-            </p>
             <p>
+              <a class="text-white">Fish's</a>
+            </p>
+            <!-- <p>
               <a class="text-white">Bootstrap Angular</a>
             </p> -->
           </div>
@@ -83,8 +81,8 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
             <p><i class="fab fa-redhat"></i> &nbsp; Rishabh S Naik / Nuthan HC</p>
-            <p><i class="fas fa-envelope mr-3"></i> rishabh2001@gmail.com / nuthanhc07@gmail.com</p> 
-            <p><i class="fas fa-phone mr-3"></i>+91 8971066071 <br> &nbsp; &nbsp;+91 6360908381</p>
+            <p><i class="fas fa-envelope mr-3"></i> getpets@gmail.com</p> 
+            <p><i class="fas fa-phone mr-3"></i>+91 7778889907</p>
           </div>
           <!-- Grid column -->
         </div>
