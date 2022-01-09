@@ -7,6 +7,9 @@
     $petname=$_POST['petname'];
 	  $age=$_POST['age'];
 	  $specie=$_POST['specie'];
+    $breed=$_POST['breed'];
+    $color=$_POST['color'];
+    $cost=$_POST['cost'];
     $paragraph=$_POST['paragraph'];
 
     if($_FILES['f1']['name']){
@@ -14,14 +17,14 @@
       $img="images/".$_FILES['f1']['name'];
     }
     // echo '<script> alert("$img")</script>';
-    $sql = "INSERT INTO pet (petname,specie,age,image,paragraph) VALUES ('$petname','$specie','$age','$img','$paragraph')";
+    $sql = "INSERT INTO pet (petname,specie,breed,age,color,image,cost,paragraph) VALUES ('$petname','$specie','$breed','$age','$color','$img','$cost','$paragraph')";
 
     $result = mysqli_query($conn,$sql);
     echo '<script> alert("inserted successfully..!")</script>';
 }
 ?>
 
-<?php include('templates/header2.php'); ?>
+
 <?php include('templates/csstags.php'); ?>
 <div class="form_body_addpets">
   <h3>Add Your Pets </h3>
@@ -46,12 +49,24 @@
       <br/>
     </div>
     <div class="form_addpets">
+      <label id="first"><b>Breed:</b></label><br/>
+      <input type="text" name="breed" placeholder="Enter breed" ><br/>
+    </div>
+    <div class="form_addpets">
+      <label id="first"><b>color:</b></label><br/>
+      <input type="text" name="color" placeholder="Enter color" ><br/>
+    </div>
+    <div class="form_addpets">
       <label id="first"><b>Add image:</b></label><br/>
       <input type="file" name="f1"><br>
     </div>
     <div class="form_addpets">
+      <label id="first"><b>cost:</b></label><br/>
+      <input type="number" name="cost" placeholder="Enter cost" ><br/>
+    </div>
+    <div class="form_addpets">
       <label id="first"><b>Description:</b></label><br/>
-      <textarea rows="5" cols="52" type="text" name="paragraph" minlength="10" placeholder="Description about 150 characters"> </textarea>
+      <textarea rows="5" cols="52" type="text" name="paragraph" minlength="10" placeholder="Describe about your pet...!! (50 characters)"></textarea>
       <br/>
     </div>
     <div class="form_addpets">

@@ -4,16 +4,16 @@ include ("config.php");
 
 $results = mysqli_query($conn,  "SELECT * FROM pet");
 
-session_start();    
+// session_start();    
 
 
-$hiddenname=$_POST['hidden_petname'];
-	$hiddenimage=$_POST['hidden_image'];
-    $hiddenspecie=$_POST['hidden_specie'];
-  $hiddencost=$_POST['hidden_cost'];
-    $cid=$_SESSION['id'];
+// $hiddenname=$_POST['hidden_petname'];
+// 	$hiddenimage=$_POST['hidden_image'];
+//     $hiddenspecie=$_POST['hidden_specie'];
+//   $hiddencost=$_POST['hidden_cost'];
+//     $cid=$_SESSION['id'];
 
-  $sql = "INSERT INTO cart (petname,photo,specie,price,c_id)  VALUES ('$hiddenname','$hiddenimage','$hiddenspecie','$hiddencost','$cid')";
+//   $sql = "INSERT INTO cart (petname,photo,specie,price,c_id)  VALUES ('$hiddenname','$hiddenimage','$hiddenspecie','$hiddencost','$cid')";
 
   // $result = mysqli_query($conn,$sql);
   // echo "inserted successfully..!";
