@@ -1,14 +1,15 @@
 <?php
 //This script will handle login
+require_once "config.php";
 session_start();
 
 // check if the user is already logged in
 if(isset($_SESSION['sellername']))
 {
-    header("location: add_pets.php ");
+    header("location: sellerpage.php");
     exit;
 }
-require_once "config.php";
+
 
 $sellername = $password = "";
 $err = "";
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 if(empty($err))
 {
-    $sql = "SELECT id, sellername, password FROM seller WHERE sellername = ?";
+    $sql = "SELECT id, username, password FROM users WHERE username = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $param_sellername);
     $param_sellername = $sellername;
@@ -45,12 +46,13 @@ if(empty($err))
                         {
                             // this means the password is corrct. Allow user to login
                             session_start();
+
                             $_SESSION["sellername"] = $sellername;
                             $_SESSION["id"] = $id;
                             $_SESSION["loggedin"] = true;
 
                             //Redirect user to welcome page
-                            header("location: add_pets.php");
+                            header("location: sellerpage.php");
                             
                         }
                     }
@@ -71,11 +73,12 @@ if(empty($err))
   <?php include('templates/header.php'); ?>
   <?php include('templates/css_login.php'); ?>
 
+    <title>PHP login system!</title>
   </head>
   <body>
 <div class="space"></div>
 <div class="container">
-<h3>Seller Log-in:</h3>
+<h3>Log-in:</h3>
 <hr>
 
 <form action="" method="post">

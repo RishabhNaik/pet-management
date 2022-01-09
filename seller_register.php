@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $sellername_err = "sellername cannot be blank";
     }
     else{
-        $sql = "SELECT id FROM seller WHERE sellername = ?";
+        $sql = "SELECT id FROM sellers WHERE sellername = ?";
         $stmt = mysqli_prepare($conn, $sql);
         if($stmt)
         {
@@ -69,7 +69,7 @@ if(trim($_POST['password']) !=  trim($_POST['confirm_password'])){
 // If there were no errors, go ahead and insert into the database
 if(empty($sellername_err) && empty($password_err) && empty($confirm_password_err))
 {
-    $sql = "INSERT INTO seller (sellername, password, email) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO sellers (sellername, password, email) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt)
     {
@@ -82,7 +82,7 @@ if(empty($sellername_err) && empty($password_err) && empty($confirm_password_err
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))
         {
-            header("location: seller.php");
+            header("location: welcome.php");
         }
         else{
             echo "Something went wrong... cannot redirect!";

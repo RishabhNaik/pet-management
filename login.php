@@ -49,9 +49,9 @@ if(empty($err))
                             $_SESSION["username"] = $username;
                             $_SESSION["id"] = $id;
                             $_SESSION["loggedin"] = true;
-
+                            
                             //Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location:cart.php");
                             
                         }
                     }

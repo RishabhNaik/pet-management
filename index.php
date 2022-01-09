@@ -1,8 +1,18 @@
+<?php 
+
+
+include ("config.php");
+session_start();    
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 	
 	<?php include('templates/header.php'); ?>
 	<?php include('templates/csstags.php'); ?>
+  
 	
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
