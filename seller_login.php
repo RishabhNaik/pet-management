@@ -1,8 +1,27 @@
+<?php
+include("../config.php");
+    session_start();
+    $message="";
+    if(count($_POST)>0) {
+       
+        $result = mysqli_query($conn,"SELECT * FROM seller WHERE sellername='" . $_POST["sellername"] . "' and password = '". $_POST["password"]."'");
+        $row  = mysqli_fetch_array($result);
+        if(is_array($row)) {
+        $_SESSION["id"] = $row['id'];
+        $_SESSION["sellername"] = $row['sellername'];
+        } else {
+         $message = "Invalid Username or Password!";
+        }
+    }
+    if(isset($_SESSION["id"])) {
+    header("Location:index.php");
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include('templates/header.php'); ?>
-  <?php include('templates/css_login.php'); ?>
+  <?php include('../templates/header.php'); ?>
+  <?php include('../templates/css_login.php'); ?>
 
     <title>PHP login system!</title>
   </head>
@@ -12,10 +31,10 @@
 <h3>Log-in:</h3>
 <hr>
 
-<form action="sample.php" method="post">
+<form action="" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1"><b>sellername :</b></label>
-    <input type="text" name="sellername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter sellername">
+    <label for="exampleInputEmail1"><b>Username :</b></label>
+    <input type="text" name="sellername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1"><b>Password :</b></label>
@@ -28,9 +47,9 @@
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
     <a href="#">Forgot password?</a>
   </div>
-  <button type="submit" name="submit" class="btn btn-primary">Log-in</button>
+  <button type="submit" class="btn btn-primary">Log-in</button>
   <br><br>
-  <p>Create your account ? <a href="register.php"> <u>Sign-UP</u></a></p>
+  <p>Create your account ? <a href="seller_register.php"> <u>Sign-UP</u></a></p>
   
 </form>
 

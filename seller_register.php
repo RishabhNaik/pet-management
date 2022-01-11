@@ -1,7 +1,7 @@
 
 <?php
 
-require_once "config.php";
+require_once "../config.php";
 
 $sellername = $password = $confirm_password = $email = "";
 $sellername_err = $password_err = $confirm_password_err = $email_err = "";
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $sellername_err = "sellername cannot be blank";
     }
     else{
-        $sql = "SELECT id FROM sellers WHERE sellername = ?";
+        $sql = "SELECT id FROM seller WHERE sellername = ?";
         $stmt = mysqli_prepare($conn, $sql);
         if($stmt)
         {
@@ -69,7 +69,7 @@ if(trim($_POST['password']) !=  trim($_POST['confirm_password'])){
 // If there were no errors, go ahead and insert into the database
 if(empty($sellername_err) && empty($password_err) && empty($confirm_password_err))
 {
-    $sql = "INSERT INTO sellers (sellername, password, email) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO seller (sellername, password, email) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt)
     {
@@ -77,12 +77,12 @@ if(empty($sellername_err) && empty($password_err) && empty($confirm_password_err
 
         // Set these parameters
         $param_sellername = $sellername;
-        $param_password = password_hash($password, PASSWORD_DEFAULT);
+        $param_password = $password;
         $param_email = $email;
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))
         {
-            header("location: welcome.php");
+            header("location: sellerpage.php");
         }
         else{
             echo "Something went wrong... cannot redirect!";
@@ -101,8 +101,8 @@ mysqli_close($conn);
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include('templates/header.php'); ?>
-  <?php include('templates/css_login.php'); ?>
+  <?php include('../templates/header.php'); ?>
+  <?php include('../templates/css_login.php'); ?>
   </head>
   <body>
   <div class="space"></div>
@@ -132,11 +132,11 @@ mysqli_close($conn);
    <br>
   <button type="submit" class="btn btn-primary">Continue</button>
   <br><br>
-  <p>Already have an account? <a href="seller.php">Sign-in</a></p>
+  <p>Already have an account? <a href="seller_login.php">Sign-in</a></p>
  
 </form>
 </div>
 
-<?php include('templates/scriptags.php'); ?>
+<?php include('../templates/scriptags.php'); ?>
   </body>
 </html>

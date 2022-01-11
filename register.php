@@ -77,7 +77,7 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
 
         // Set these parameters
         $param_username = $username;
-        $param_password = password_hash($password, PASSWORD_DEFAULT);
+        $param_password = $password;
         $param_email = $email;
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))
