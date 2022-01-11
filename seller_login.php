@@ -1,27 +1,39 @@
-<?php
-include("../config.php");
-    session_start();
-    $message="";
-    if(count($_POST)>0) {
-       
-        $result = mysqli_query($conn,"SELECT * FROM seller WHERE sellername='" . $_POST["sellername"] . "' and password = '". $_POST["password"]."'");
-        $row  = mysqli_fetch_array($result);
-        if(is_array($row)) {
-        $_SESSION["id"] = $row['id'];
-        $_SESSION["sellername"] = $row['sellername'];
-        } else {
-         $message = "Invalid Username or Password!";
-        }
-    }
-    if(isset($_SESSION["id"])) {
-    header("Location:index.php");
-    }
+<?php 
+include("config.php");
+
+
+
+if(isset($_POST['sellername']))
+{
+$sellername = $_POST['sellername'];
+$password = $_POST['password'];
+
+$res = mysqli_query($conn,"select * from seller where sellername='$sellername' and password='$password'");
+$result=mysqli_fetch_array($res);
+
+if($result)
+{
+   session_start();
+
+                            $_SESSION["sellername"] = $result['sellername'];
+                            $_SESSION["id"] = $result['id'];
+                            $_SESSION["loggedin"] = true;
+// echo "You have logged in as an admin";
+header("location:welcome.php");   // create my-account.php page for redirection 
+exit;	
+}
+else
+{
+	echo "failed ";
+}
+}
+
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include('../templates/header.php'); ?>
-  <?php include('../templates/css_login.php'); ?>
+  <?php include('templates/header.php'); ?>
+  <?php include('templates/css_login.php'); ?>
 
     <title>PHP login system!</title>
   </head>
@@ -33,7 +45,7 @@ include("../config.php");
 
 <form action="" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1"><b>Username :</b></label>
+    <label for="exampleInputEmail1"><b>Sellername :</b></label>
     <input type="text" name="sellername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
   </div>
   <div class="form-group">

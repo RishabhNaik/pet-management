@@ -1,69 +1,32 @@
-<?php
-//This script will handle login
-require_once "config.php";
-session_start();
+<?php 
+include("config.php");
 
-// check if the user is already logged in
-if(isset($_SESSION['username']))
+
+if(isset($_POST['username']))
 {
-    header("location: welcome.php");
-    exit;
-}
+$username = $_POST['username'];
+$password = $_POST['password'];
 
+$res = mysqli_query($conn,"select * from users where username='$username' and password='$password'");
+$result=mysqli_fetch_array($res);
 
-$username = $password = "";
-$err = "";
-
-// if request method is post
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(empty(trim($_POST['username'])) || empty(trim($_POST['password'])))
-    {
-        $err = "Please enter username + password";
-    }
-    else{
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-    }
-
-
-if(empty($err))
+if($result)
 {
-    $sql = "SELECT id, username, password FROM users WHERE username = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $param_username);
-    $param_username = $username;
-    
-    
-    // Try to execute this statement
-    if(mysqli_stmt_execute($stmt)){
-        mysqli_stmt_store_result($stmt);
-        if(mysqli_stmt_num_rows($stmt) == 1)
-                {
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt))
-                    {
-                        if(password_verify($password, $hashed_password))
-                        {
-                            // this means the password is corrct. Allow user to login
-                            session_start();
-                            $_SESSION["username"] = $username;
-                            $_SESSION["id"] = $id;
+  session_start();
+
+                            $_SESSION["username"] = $result['username'];
+                            $_SESSION["id"] = (int)$result['id'];
+                            $_SESSION["address"] = $result['address'];
                             $_SESSION["loggedin"] = true;
-                            
-                            //Redirect user to welcome page
-                            header("location:welcome.php");
-                            
-                        }
-                    }
-
-                }
-
-    }
-}    
-
-
+// echo "You have logged in as an admin";
+header("location:welcome.php");   // create my-account.php page for redirection 
+exit;	
 }
-
+else
+{
+	echo "failed ";
+}
+}
 
 ?>
 <!doctype html>

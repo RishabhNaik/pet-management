@@ -30,7 +30,7 @@ $hiddenname=$_POST['hidden_petname'];
     <div class="row">
     <?php while($row=mysqli_fetch_array($results)){ ?>
         <div class="col-auto mb-3"  style="width: 380px;">
-            <div class="card">
+            <div class="card border border-primary">
                 <form action="" method="post">
                 <div class="card-body">
                     <h5 class="card-title"> <b><?php echo $row['petname']; ?></b></h5>

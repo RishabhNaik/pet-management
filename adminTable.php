@@ -1,4 +1,19 @@
-<?php include('templates/header2.php'); ?>
+<?php 
+include("config.php");
+
+
+session_start();
+
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: admin_login.php");
+}
+
+  
+
+include('templates/header2.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +40,7 @@
 
 <?php
     // database connection
-   $conn = new mysqli('localhost','root','','getpets');
+   
    if($conn->connect_error)
    { 
       die('Connection Failed : '.$conn->connect_error);
@@ -56,10 +71,7 @@
 }
 ?>
     </table>
-    <?php
-    $stmt->close();
-    $conn->close();
-    ?>
+  
 </table>
 
 <table>
@@ -75,7 +87,7 @@
 
 <?php
     // database connection
-   $conn = new mysqli('localhost','root','','getpets');
+
    if($conn->connect_error)
    { 
       die('Connection Failed : '.$conn->connect_error);
@@ -100,10 +112,7 @@
 }
 ?>
     </table>
-    <?php
-    $stmt->close();
-    $conn->close();
-    ?>
+  
 </table>
 
 <table>
@@ -119,7 +128,7 @@
 
 <?php
     // database connection
-   $conn = new mysqli('localhost','root','','getpets');
+
    if($conn->connect_error)
    { 
       die('Connection Failed : '.$conn->connect_error);

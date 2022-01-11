@@ -18,7 +18,7 @@
     </li> -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      <?php echo "Hello ". $_SESSION['username']?>! Profile </a>
+      <?php echo "Hello ". $_SESSION['sellername']?>! Profile </a>
       <div class="dropdown-menu">
         <h6>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;Your Profile</h6>
         <hr>
@@ -33,7 +33,7 @@
       <a class="nav-link" href="cart.php">Cart</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="aboutUslogin.php">About US</a>
+      <a class="nav-link" href="aboutUS.php">About US</a>
     </li>
   </ul>
 </nav>

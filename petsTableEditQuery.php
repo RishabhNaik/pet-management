@@ -1,6 +1,6 @@
 <?php
 
- $conn = new mysqli('localhost','root','','getpets');
+include("config.php");
  if($conn->connect_error)
  { 
      die('Connection Failed : '.$conn->connect_error);

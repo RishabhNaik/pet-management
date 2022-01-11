@@ -4,13 +4,25 @@ include_once 'config.php';
 session_start();
 
 
-$result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(c.id),c.id,c.petname,c.specie,c.price,c.c_id,u.id FROM cart c,users u where u.id=c.c_id group by petname order by row_num");
 
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 {
     header("location: login.php");
 }
 
+if(isset($_POST['submit'])){
+$hiddenname=$_SESSION['username'];
+	$hiddenaddress=$_SESSION['address'];
+  $hiddentotalcost=$_POST['hidden_totalcost'];
+    $cid=$_SESSION['id'];
+
+
+  $sql = "INSERT INTO orders (name,address,total_cost,date,c_id)  VALUES ('$hiddenname','$hiddenaddress','$hiddentotalcost',curdate(),'$cid')";
+
+  $result = mysqli_query($conn,$sql);
+  echo "inserted successfully..!";
+
+}
 
 ?>
 <?php 
@@ -34,15 +46,23 @@ $result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(id),id,p
                     <h6 class="card-subtitle mb-2 "><b>Specie:&nbsp;</b> <?php echo $row['specie']; ?></h6>
                     <p class="card-text"><b>No of Quantity:&nbsp;</b> <?php echo $row['count(id)']; ?></p>
                     <h6 class="card-subtitle mb-2 "><b> ₹ <?php echo $row['price']; ?></b></h6>
-                    <p><?php $sum+= $row["price"]; ?>Your total cost is <?php echo $sum; ?></p>
-                    <a href="delete_cart.php?id=<?php echo $row["id"]; ?>" >Delete</a>
+                    <p><?php $sum+= $row["price"]; ?></p>
+                    <a href="delete_cart.php?id=<?php echo $row["id"]; ?>" >remove</a>
                 </div>
                 </form>
             </div>
         </div>
+		
         <?php } ?>
     </div>
   </div>
+    <form action="" method="post">
+               
+                    <input type="hidden" name="hidden_totalcost" value="<?php echo $sum; ?>" />
+
+                    <button type="submit" name="submit" class="btn btn-primary">Checkout</button>
+                </form>
+
 <?php include('templates/footer.php'); ?>
 <?php include('templates/scriptags.php'); ?>
 

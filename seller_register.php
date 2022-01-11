@@ -1,7 +1,7 @@
 
 <?php
 
-require_once "../config.php";
+require_once "config.php";
 
 $sellername = $password = $confirm_password = $email = "";
 $sellername_err = $password_err = $confirm_password_err = $email_err = "";
@@ -101,8 +101,8 @@ mysqli_close($conn);
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include('../templates/header.php'); ?>
-  <?php include('../templates/css_login.php'); ?>
+  <?php include('templates/header.php'); ?>
+  <?php include('templates/css_login.php'); ?>
   </head>
   <body>
   <div class="space"></div>
@@ -137,6 +137,6 @@ mysqli_close($conn);
 </form>
 </div>
 
-<?php include('../templates/scriptags.php'); ?>
+<?php include('templates/scriptags.php'); ?>
   </body>
 </html>

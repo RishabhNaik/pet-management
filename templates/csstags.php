@@ -5,7 +5,7 @@
   <style>
 	  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 	  body{
-		background:#E6E7E8;
+		background:#edf8f8;
 		font-family: 'Poppins', sans-serif;
 	  }
 	  .card{
@@ -31,13 +31,14 @@
 		  padding-bottom:10px;
 	  }
 	.navbar-brand img{
-		width:40px;
+		width:45px;
 		height:40px;
 		
 	}
 	.carousel-inner img{
+
         width:100%;
-		height:500px;
+		height:650px;
 	}
 	.container-footer{
 		width:100%;

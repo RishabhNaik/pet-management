@@ -2,6 +2,9 @@
 <?php
 
   include("config.php");
+  session_start();
+  echo var_dump($_SESSION['id']);
+
 
   if(isset($_POST['save'])){
     $petname=$_POST['petname'];
@@ -11,13 +14,14 @@
     $color=$_POST['color'];
     $cost=$_POST['cost'];
     $paragraph=$_POST['paragraph'];
+    $sid=$_SESSION['id'];
 
     if($_FILES['f1']['name']){
       move_uploaded_file($_FILES['f1']['tmp_name'], "images/".$_FILES['f1']['name']);
       $img="images/".$_FILES['f1']['name'];
     }
     // echo '<script> alert("$img")</script>';
-    $sql = "INSERT INTO pet (petname,specie,breed,age,color,image,cost,paragraph) VALUES ('$petname','$specie','$breed','$age','$color','$img','$cost','$paragraph')";
+    $sql = "INSERT INTO pet (s_id,petname,specie,breed,age,color,image,cost,paragraph) VALUES ('$sid','$petname','$specie','$breed','$age','$color','$img','$cost','$paragraph')";
 
     $result = mysqli_query($conn,$sql);
     echo '<script> alert("inserted successfully..!")</script>';

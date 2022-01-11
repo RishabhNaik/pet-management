@@ -1,6 +1,8 @@
 <?php 
 include("config.php");
 
+
+
 if(isset($_POST['admin_id']))
 {
 $admin_id = $_POST['admin_id'];
@@ -11,6 +13,10 @@ $result=mysqli_fetch_array($res);
 
 if($result)
 {
+  session_start();
+                            $_SESSION["admin_id"] = $username;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["loggedin"] = true;
 echo "You have logged in as an admin";
 header("location:adminTable.php");   // create my-account.php page for redirection 
 exit;	
@@ -20,7 +26,7 @@ else
 	echo "failed ";
 }
 }
-require_once "config.php";
+
 ?>
 
 <!doctype html>
