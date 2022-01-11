@@ -51,7 +51,7 @@ if(empty($err))
                             $_SESSION["loggedin"] = true;
                             
                             //Redirect user to welcome page
-                            header("location:cart.php");
+                            header("location:welcome.php");
                             
                         }
                     }
@@ -71,8 +71,6 @@ if(empty($err))
   <head>
   <?php include('templates/header.php'); ?>
   <?php include('templates/css_login.php'); ?>
-
-    <title>PHP login system!</title>
   </head>
   <body>
 <div class="space"></div>

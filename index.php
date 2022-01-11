@@ -40,7 +40,7 @@ session_start();
   <h1 style=padding-top:10px;><center>Pets</center></h1>
 </div>
 
-  <?php include('getas_cards.php'); ?>
+  <?php include('getas_cardsindex.php'); ?>
 	<?php include('templates/footer.php'); ?>
 	<?php include('templates/scriptags.php'); ?>
 

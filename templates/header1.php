@@ -1,6 +1,7 @@
 <head>
 	<title>GetPets</title>
   <link rel="icon" href="images/logo.png" type="image/icon type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('csstags.php'); ?>
   
 </head>
@@ -32,7 +33,7 @@
       <a class="nav-link" href="cart.php">Cart</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="aboutUs.php">About US</a>
+      <a class="nav-link" href="aboutUslogin.php">About US</a>
     </li>
   </ul>
 </nav>

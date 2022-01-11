@@ -1,6 +1,7 @@
 <head>
 	<title>GetPets</title>
   <link rel="icon" href="images/logo.png" type="image/icon type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('csstags.php'); ?>
   
 </head>
