@@ -23,7 +23,7 @@ exit;
 }
 else
 {
-	echo "failed ";
+	echo "<script>alert('Incorrect Admin_id / Password');</script>";
 }
 }
 

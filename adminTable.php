@@ -12,7 +12,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 
   
 
-include('templates/header2.php'); 
+include('templates/adminHeader.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,8 +79,7 @@ include('templates/header2.php');
     <table id="user">
         <tr class="tagLine">
             <td>Id</td>
-            <td>Username</td>
-            <td>Password</td>                
+            <td>Username</td>               
             <td>Created_at</td>
             <td>Email</td> 
         </tr>
@@ -101,7 +100,6 @@ include('templates/header2.php');
         <tr>
             <td><?php echo $users['id'];?></td>
             <td><?php echo $users['username'];?></td>
-            <td><?php echo $users['password'];?></td>
             <td><?php echo $users['created_at'];?></td>
             <td><?php echo $users['email'];?></td>
         </tr>
@@ -120,8 +118,7 @@ include('templates/header2.php');
     <table id="seller">
         <tr class="tagLine">
             <td>Id</td>
-            <td>Sellername</td>
-            <td>Password</td>                
+            <td>Sellername</td>             
             <td>Created_at</td>
             <td>Email</td> 
         </tr>
@@ -142,7 +139,6 @@ include('templates/header2.php');
         <tr>
             <td><?php echo $seller['id'];?></td>
             <td><?php echo $seller['sellername'];?></td>
-            <td><?php echo $seller['password'];?></td>
             <td><?php echo $seller['created_at'];?></td>
             <td><?php echo $seller['email'];?></td>
         </tr>
@@ -158,6 +154,49 @@ include('templates/header2.php');
     $conn->close();
     ?>
 </table>
+<table>
+ <h1><center>Oredr-Details</center></h1>
+    <table class="order">
+        <tr class="tagLine">
+            <td>Id</td>
+            <td>name</td>
+            <td>total_cost</td>                
+            <td>address</td>
+            <td>date</td> 
+            <td>c_id </td>
+        </tr>
+
+<?php
+    // database connection
+   
+   if($conn->connect_error)
+   { 
+      die('Connection Failed : '.$conn->connect_error);
+   }
+   else
+   {
+      $stmt = mysqli_query($conn,"select * from orders;");
+      while($orders = mysqli_fetch_array($stmt))
+      {
+        ?>
+        <tr>
+            <td><?php echo $orders['id'];?></td>
+            <td><?php echo $orders['name'];?></td>
+            <td><?php echo $orders['total_cost'];?></td>
+            <td><?php echo $orders['address'];?></td>
+            <td><?php echo $orders['date'];?></td>
+            <td><?php echo $orders['c_id'];?></td>
+        </tr>
+        <?php
+    }
+    ?>
+    <?php
+}
+?>
+    </table>
+  
+</table>
+
 <div><p></p></div>
 <div><p></p></div>
 </body>

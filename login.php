@@ -24,7 +24,7 @@ exit;
 }
 else
 {
-	echo "failed ";
+	echo "<script>alert('Incorrect Username / Password');</script>";
 }
 }
 

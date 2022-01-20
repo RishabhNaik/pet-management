@@ -17,7 +17,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include('templates/header1.php'); ?>
+  <?php include('templates/userHeader.php'); ?>
   <?php include('templates/csstags.php'); ?>
   </head>
   <body>

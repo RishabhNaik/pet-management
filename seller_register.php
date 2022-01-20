@@ -28,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1)
                 {
                     $sellername_err = "This sellername is already taken"; 
+                    echo "<script>alert('This Seller name is already taken');</script>";
+                    
                 }
                 else{
                     $sellername = trim($_POST['sellername']);
@@ -82,7 +84,7 @@ if(empty($sellername_err) && empty($password_err) && empty($confirm_password_err
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))
         {
-            header("location: sellerpage.php");
+            header("location: sellerlogin_act.php");
         }
         else{
             echo "Something went wrong... cannot redirect!";

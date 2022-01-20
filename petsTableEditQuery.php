@@ -1,13 +1,7 @@
 <?php
 
 include("config.php");
- if($conn->connect_error)
- { 
-     die('Connection Failed : '.$conn->connect_error);
 
- }
- else
- {
      $petname = $_REQUEST['petname'];
      $age= $_REQUEST['age'];
      $id = $_REQUEST['id'];
@@ -23,6 +17,6 @@ include("config.php");
     //  echo "success";
     //  $stmt->close();
     //  $conn->close();
-    include ("adminTable.php");
- }
+    header("location: adminTable.php");
+ 
  ?>

@@ -3,7 +3,6 @@
 
   include("config.php");
   session_start();
-  echo var_dump($_SESSION['id']);
 
 
   if(isset($_POST['save'])){
@@ -24,12 +23,14 @@
     $sql = "INSERT INTO pet (s_id,petname,specie,breed,age,color,image,cost,paragraph) VALUES ('$sid','$petname','$specie','$breed','$age','$color','$img','$cost','$paragraph')";
 
     $result = mysqli_query($conn,$sql);
-    echo '<script> alert("inserted successfully..!")</script>';
+    echo '<script> alert("Pet added Successfully")</script>';
 }
 ?>
 
 
 <?php include('templates/csstags.php'); ?>
+<?php include('templates/sellerHeader.php'); ?>
+<p></p>
 <div class="form_body_addpets">
   <h3>Add Your Pets </h3>
   <hr>
@@ -78,6 +79,7 @@
     </div>
   </form>
 </div>
+<p></p>
 
 <?php include('templates/footer.php'); ?>
 <?php include('templates/scriptags.php'); ?>

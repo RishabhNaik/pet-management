@@ -20,7 +20,8 @@ $hiddenname=$_SESSION['username'];
   $sql = "INSERT INTO orders (name,address,total_cost,date,c_id)  VALUES ('$hiddenname','$hiddenaddress','$hiddentotalcost',curdate(),'$cid')";
 
   $result = mysqli_query($conn,$sql);
-  echo "inserted successfully..!";
+  echo  "<script>alert('Checked Out successfully..!');</script>";
+ 
 
 }
 
@@ -29,7 +30,7 @@ $hiddenname=$_SESSION['username'];
 
 $result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(id),id,petname,photo,specie,price FROM cart group by petname order by row_num");
 ?>
-<?php include('templates/header1.php'); ?>
+<?php include('templates/userHeader.php'); ?>
 <?php include('templates/csstags.php'); ?>
   <div class="container mt-4">
     <div class="row">
@@ -60,7 +61,7 @@ $result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(id),id,p
                
                     <input type="hidden" name="hidden_totalcost" value="<?php echo $sum; ?>" />
 
-                    <button type="submit" name="submit" class="btn btn-primary">Checkout</button>
+                   <center><button type="submit" name="submit" class="btn btn-primary">Checkout</button></center>
                 </form>
 
 <?php include('templates/footer.php'); ?>

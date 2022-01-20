@@ -19,12 +19,12 @@ if($result)
                             $_SESSION["id"] = $result['id'];
                             $_SESSION["loggedin"] = true;
 // echo "You have logged in as an admin";
-header("location:welcome.php");   // create my-account.php page for redirection 
+header("location:add_pets.php");   // create my-account.php page for redirection 
 exit;	
 }
 else
 {
-	echo "failed ";
+	echo "<script>alert('Incorrect Sellername / Password');</script>";
 }
 }
 
