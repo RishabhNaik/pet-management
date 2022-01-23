@@ -1,31 +1,37 @@
 <head>
 	<title>GetPets</title>
-	<!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <style type="text/css">
-	.brand{
-	  	background: #cbb09c !important;
-	  }
-  	.brand-text{
-  		color: #cbb09c !important;
-  	}
-  	form{
-  		max-width: 460px;
-  		margin: 20px auto;
-  		padding: 20px;
-  	}
-  </style>
+  <link rel="icon" href="images/logo.png" type="image/icon type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php include('csstags.php'); ?>
+  
 </head>
-<body class="grey lighten-4">
-	<nav class="white z-depth-0">
-    <div class="container">
-      <a href="#" class="brand-logo brand-text">GetPets</a>
-      <ul id="nav-mobile" class="right hide-on-small-and-down">
-        <li><a href="#" class="btn brand z-depth-0">Home</a></li>
-		<li><a href="#" class="btn brand z-depth-0">Admin</a></li>
-		<li><a href="#" class="btn brand z-depth-0">Profile</a></li>
-		<li><a href="#" class="btn brand z-depth-0">Cart</a></li>
-		<li><a href="#" class="btn brand z-depth-0">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
+<body>
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
+  <!-- <img id="logo" src="logo.png" alt="logo"> -->
+  <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"><b> GetPets</b></a>
+  <ul class="nav nav-pills mx-3">
+    <li class="nav-item">
+      <a class="nav-link" href="index.php">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="admin_login.php">Admin</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="login.php">Sign In</a>
+        <a class="dropdown-item" href="register.php">Sign Up</a>
+        <div role="separator" class="dropdown-divider"></div>
+        <a class="dropdown-item" href="seller_register.php">Seller</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Emptypage.php">Cart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="aboutUs.php">About US</a>
+    </li>
+  </ul>
+</nav>
+
+<?php include('scriptags.php'); ?>
