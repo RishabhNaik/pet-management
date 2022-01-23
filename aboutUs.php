@@ -9,30 +9,23 @@
     <h2>About Us</h2>
 	<div class="content_aboutus">
     <p style="text-align:justify;">
-	    The Petshop.php operates an online pet shop store selling animal 
-        . The company started 2003 as a small petshop
-        to sell quality freshwater fish to the Filipino hobbyist. The product line had
-        expanded to include a number of different kind of pets and retail such as
-        dogs and cats feeds and accessories. Today, the company is one of the biggest
-        whosale and retail stores of animal products carrying quality brands. Its online
-		business sites launched in the 3rd quarter of 2016 to accommodate the growing 
-		population of loyal and new customers who prefer to purchase via online.
+	The Pet Shop Management System in PHP is a mini database management system designed to assist small-scale pet shop owners in keeping track of available pets and assist sellers in selling their pets. The Pet Shop Management System in PHP gives a pet shop owner a web-based interface to manage his pet shop activities. This web application gives users the ability to store and manage basic information about pets in the shop. 
+
+  
     </p>
 	</div>
-	<h2>Customers First</h2>
+
 	<div class="content_aboutus">
 	<p style="text-align:justify;">
-        Building loyalty and good relationship with our customer is our priority.  
-        The company exist to give the best price without compromising the quality and to
-        make each transaction experience easy,safe and 
-        accessible to online buyers.
+	A user can see the cards of available pets in the shop where the seller has listed to sell the pet on the home page. The user can proceed by adding the pet to the cart. The seller can perform functions such as adding a pet to the seller's page. Following that, after entering the animal data, he or she can view the entire list of pet animals stored in the pet shop management system. If the seller wants to edit the animal data, simply click on the "edit" button next to the animal, which will allow the seller to instantly enter new details and update it. To delete the data, the seller clicks the delete button next to the pet's name to confirm and delete the pet's data. 
     </p>
 	</div>
-	<h2>Mission</h2>
+	
 	<div class="content_aboutus">
 	<p style="text-align:justify;">
-        Our goal is to give our customers the best online shopping experience by giving 
-		them the best price and making each transaction  easy,  fast and secured.
+	Similarly, for the user, the system can save user data. If necessary, the administrator can save user records such as their name, address, phone number, and other information. Furthermore, the system has the capability of storing seller data when the seller is required to add an animal. The admin has access to all of the data in the database, including pet details, seller details, and user details.  
+
+so listed in these products to help the users and customers identify the product with the animal. 
 	</p>
 	</div>
 	<h2>Vision</h2>

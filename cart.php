@@ -45,7 +45,7 @@ $result = mysqli_query($conn,"SELECT ROW_NUMBER() OVER () row_num,count(id),id,p
                     <img class="img_size" style="height:220px;" src="<?php echo $row['photo']; ?>" alt="pet image" width="308px">
                     <p></p>
                     <h6 class="card-subtitle mb-2 "><b>Specie:&nbsp;</b> <?php echo $row['specie']; ?></h6>
-                    <p class="card-text"><b>No of Quantity:&nbsp;</b> <?php echo $row['count(id)']; ?></p>
+                    <!-- <p class="card-text"><b>No of Quantity:&nbsp;</b> <?php echo $row['count(id)']; ?></p> -->
                     <h6 class="card-subtitle mb-2 "><b> ₹ <?php echo $row['price']; ?></b></h6>
                     <p><?php $sum+= $row["price"]; ?></p>
                     <a href="delete_cart.php?id=<?php echo $row["id"]; ?>" >remove</a>
