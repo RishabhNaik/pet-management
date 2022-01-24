@@ -17,6 +17,6 @@ include("config.php");
     //  echo "success";
     //  $stmt->close();
     //  $conn->close();
-    header("location: adminTable.php");
+   //  header("location: adminTable.php");
  
  ?>
