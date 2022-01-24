@@ -19,7 +19,7 @@ if($result)
                             $_SESSION["id"] = $result['id'];
                             $_SESSION["loggedin"] = true;
 // echo "You have logged in as an admin";
-header("location:add_pets.php");   // create my-account.php page for redirection 
+header("location:getas_cards_seller.php");   // create my-account.php page for redirection 
 exit;	
 }
 else

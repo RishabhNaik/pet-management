@@ -10,11 +10,6 @@
      $id = $_REQUEST['id'];
      $stmt = mysqli_query($conn,"select * from pet WHERE id='".$id."';");
      $row = mysqli_fetch_assoc($stmt);
-    //  $stmt->execute();
-    //  echo "success";
-    //
-    //  $stmt->close();
-    //  $conn->close();
 
  }
 ?>
