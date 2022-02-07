@@ -119,7 +119,7 @@ include('templates/adminHeader.php');
         <tr class="tagLine">
             <td>Id</td>
             <td>Sellername</td>             
-            <td>Created_at</td>
+            
             <td>Email</td> 
         </tr>
 
@@ -139,7 +139,7 @@ include('templates/adminHeader.php');
         <tr>
             <td><?php echo $seller['id'];?></td>
             <td><?php echo $seller['sellername'];?></td>
-            <td><?php echo $seller['created_at'];?></td>
+            
             <td><?php echo $seller['email'];?></td>
         </tr>
         <?php
@@ -149,10 +149,7 @@ include('templates/adminHeader.php');
 }
 ?>
     </table>
-    <?php
-    $stmt->close();
-    $conn->close();
-    ?>
+ 
 </table>
 <table>
  <h1><center>Oredr-Details</center></h1>
